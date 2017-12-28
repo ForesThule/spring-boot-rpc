@@ -1,0 +1,14 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package com.lesforest;
+
+
+message Msg {
+    string msg = 1;
+}
+
+service TestService{
+    rpc Stubby(Msg) returns (Msg);
+    rpc Streamy(Msg) returns (stream Msg) {}
+}
+
